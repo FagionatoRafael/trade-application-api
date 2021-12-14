@@ -15,9 +15,7 @@ app.route('/user')
         const result = insertCollection(user)
         result.then((r) => res.json(r))
     })
-    .put((req, res) => {
-
-    })
+    
 
 app.route('/user/:id')
     .get((req, res) => {
@@ -25,6 +23,12 @@ app.route('/user/:id')
         const result = findByIdCollection(id)
         result.then((r) => res.json(r))
         console.log(id)
+    })
+    .patch((req, res) => {
+        const id = req.params.id
+        const body = req.body
+        const result = updateCollection(id, body)
+        result.then((r) => res.json(r))
     })
 
 export default app;

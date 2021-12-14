@@ -7,8 +7,8 @@ const insertCollection = async (body: any) => {
     // console.log('Inserted documents =>', insertResult);
 }
 
-const findByIdCollection = async (body: any) => {
-    const findResult = await collection.find({_id: new ObjectId(body)}).toArray()
+const findByIdCollection = async (id: any) => {
+    const findResult = await collection.find({_id: new ObjectId(id)}).toArray()
     // console.log('Found documents =>', findResult);
     return findResult
 }
@@ -20,7 +20,7 @@ const findOneCollection = async (body: any) => {
 }
 
 const updateCollection =async (id: any, body:any) => {
-    const updateResult = await collection.updateOne({_id: id}, { $set: body })
+    const updateResult = await collection.updateOne({_id: new ObjectId(id)}, { $set: body })
     return updateResult
 }
 

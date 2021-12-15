@@ -1,14 +1,13 @@
 import express from 'express';
-import { insertCollection, findOneCollection, updateCollection, findByIdCollection } from '../../controller/User.controller';
+import { insertCollection, findOneCollection, updateCollection, findByIdCollection } from '../../controller/User/User.controller';
 
 const app = express()
 
 app.route('/user')
     .get((req, res) => {
-        const user = req.body;
+        const user = req.query;
         const result = findOneCollection(user)
         result.then((r) => res.json(r))
-        console.log(user)
     })
     .post((req, res) => {
         const user = req.body
@@ -22,7 +21,6 @@ app.route('/user/:id')
         const id = req.params.id
         const result = findByIdCollection(id)
         result.then((r) => res.json(r))
-        console.log(id)
     })
     .patch((req, res) => {
         const id = req.params.id

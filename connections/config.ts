@@ -1,13 +1,23 @@
 import { MongoClient } from "mongodb";
+import dotenv, { DotenvParseOutput } from 'dotenv'; 
+
+interface envsParse {
+    URL: string
+    DBNAME: string
+    COLLECTIONNAME: string
+}
+
+const result = dotenv.config();
+
+const envs = result.parsed as DotenvParseOutput ;
 
 function Collection() {
-    const url = "mongodb+srv://rafael:F1292320f12@cluster0.vg2rv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-    const client = new MongoClient(url);
+    const client = new MongoClient(envs.URL as string);
 
     client.connect();
     console.log('Connected successfully to server');
-    const db = client.db('user-trade');
-    const collection = db.collection('user');
+    const db = client.db(process.env.DBNAME as string);
+    const collection = db.collection(process.env.COLLECTIONNAME as string);
     return collection
 }
 

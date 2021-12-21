@@ -20,13 +20,13 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the API in the development mode.\
+Open [http://localhost:8080](http://localhost:8080).
 
-The page will reload if you make edits.\
+It will show you on a console 'running in localhost:8080'.\
 You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner.\
+See the section about [running tests](https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/) for more information.

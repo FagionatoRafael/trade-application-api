@@ -1,4 +1,4 @@
-import { ObjectId,  } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import collection from '../../connections/config';
 
 const insertCollection = async (body: any) => {

@@ -1,12 +1,6 @@
 import { MongoClient } from "mongodb";
 import dotenv, { DotenvParseOutput } from 'dotenv'; 
 
-interface envsParse {
-    URL: string
-    DBNAME: string
-    COLLECTIONNAME: string
-}
-
 const result = dotenv.config();
 
 const envs = result.parsed as DotenvParseOutput ;
